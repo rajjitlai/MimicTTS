@@ -1,0 +1,73 @@
+# ── Python ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+site-packages/
+
+# ── Virtual Environment ──────────────────────────────
+qwen-tts-env/
+venv/
+.venv/
+env/
+
+# ── HuggingFace model cache ──────────────────────────
+# (models are large, never commit them)
+~/.cache/
+.cache/
+models/
+*.bin
+*.safetensors
+*.gguf
+*.ot
+
+# ── Audio files ──────────────────────────────────────
+# Keep the folders, ignore generated/personal audio
+outputs/*.wav
+outputs/*.mp3
+outputs/*.ogg
+reference_audio/*.wav
+reference_audio/*.mp3
+reference_audio/*.ogg
+
+# ── Environment / Secrets ────────────────────────────
+.env
+*.pem
+*.key
+
+# ── OS junk ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ── Jupyter ──────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Logs & temp ──────────────────────────────────────
+*.log
+*.tmp
+*.temp
+tmp/
+logs/
+
+# Audio files generated during development (keep the folders, ignore generated/personal audio) and reference audio
+outputs/*.wav
+outputs/*.mp3
+outputs/*.ogg
+reference_audio/*.wav
+reference_audio/*.mp3
+reference_audio/*.ogg
