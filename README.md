@@ -29,7 +29,7 @@ A simple voice cloning tool powered by [Qwen3-TTS](https://huggingface.co/Qwen/Q
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/Simple_TTS_CLI.git
+git clone https://github.com/rajjitlai/Simple_TTS_CLI.git
 cd Simple_TTS_CLI
 ```
 
