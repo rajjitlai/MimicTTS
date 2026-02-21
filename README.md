@@ -198,6 +198,7 @@ MimicTTS/
 ├── model.py                # Model loading and inference (shared singleton)
 ├── config.py               # Central config — reads from .env
 ├── reference_audio/        # Place your reference .wav/.mp3 files here
+│   └── transcripts.json    # Saved transcripts per audio file (auto-managed)
 ├── outputs/                # Generated audio files are saved here
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Your local config (not committed to git)
@@ -234,6 +235,62 @@ All settings are controlled via your `.env` file. Copy `.env.example` to `.env` 
 | `Qwen3-TTS-12Hz-1.7B-Base` | 4.5 GB | 6 to 8 GB | Better quality, production use |
 
 Switch models by changing `MODEL_ID` in your `.env` file.
+
+## Recording Your Reference Voice
+
+MimicTTS includes a built-in reference transcript in `reference_audio/transcripts.json` to make recording your own reference clip straightforward.
+
+**Step 1 — Read the provided text aloud and record it**
+
+Open `reference_audio/transcripts.json`. The default transcript reads:
+
+```
+The quiet night gathers my scattered thoughts. Moonlight drifts across the empty road.
+Streetlights hum like distant memories. And shadows stretch where silence grows.
+I walk alone but never empty. Carrying questions I never chose,
+Until the dawn begins its whisper. And turns my doubts to something close.
+```
+
+Record yourself reading this text naturally, at a comfortable pace. Aim for a **5 to 10 second clip** — you do not need to read the entire passage, just enough to capture your voice clearly.
+
+**Step 2 — Save the recording**
+
+Save your recording as a `.wav` or `.mp3` file and place it in the `reference_audio/` folder:
+
+```
+reference_audio/
+    my_voice.wav       <- your recording goes here
+    transcripts.json   <- transcript is already saved
+```
+
+**Step 3 — Run the interactive runner**
+
+```bash
+python runner.py
+```
+
+The runner will detect your audio file, load the saved transcript automatically, and skip the manual transcript entry step. Just pick your file, press Enter to confirm the transcript, type what you want the cloned voice to say, and generate.
+
+> **Recording tips:**
+> - Record in a quiet room with no background noise or echo
+> - Use a decent microphone — even a phone mic works fine if the room is quiet
+> - Speak naturally, at your normal pace and tone
+> - Avoid clipping (distortion from speaking too loudly)
+
+---
+
+## Adding Your Own Transcript
+
+If you record audio with different content, the runner will prompt you to type the transcript on first use and save it automatically. On every subsequent run with that file, it loads the saved transcript — no retyping needed.
+
+You can also edit `reference_audio/transcripts.json` directly:
+
+```json
+{
+  "my_voice.wav": "Your custom transcript text goes here.",
+  "another_clip.wav": "A second transcript for a different voice."
+}
+```
 
 ---
 
