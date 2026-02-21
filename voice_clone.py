@@ -11,7 +11,7 @@ from model import clone_voice
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Simple_TTS_CLI — Voice Cloner using Qwen3-TTS"
+        description="MimicTTS — Voice Cloner using Qwen3-TTS"
     )
     parser.add_argument(
         "--ref_audio",

@@ -38,8 +38,8 @@ def run_clone(ref_audio, ref_text, text_to_speak, language):
         return None, f"❌ Error: {str(e)}"
 
 
-with gr.Blocks(title="Simple_TTS_CLI") as demo:
-    gr.Markdown("# 🎙️ Simple_TTS_CLI\nVoice cloning powered by Qwen3-TTS.")
+with gr.Blocks(title="MimicTTS") as demo:
+    gr.Markdown("# MimicTTS\nVoice cloning powered by Qwen3-TTS.")
 
     with gr.Row():
         with gr.Column():

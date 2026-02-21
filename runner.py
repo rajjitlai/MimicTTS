@@ -12,7 +12,7 @@ from model import clone_voice
 def print_banner():
     print("")
     print("╔══════════════════════════════════════════╗")
-    print("║          Simple_TTS_CLI  🎙️              ║")
+    print("║              MimicTTS                   ║")
     print("║       Interactive Voice Cloner           ║")
     print("╚══════════════════════════════════════════╝")
     print("")
@@ -129,8 +129,8 @@ def main():
 
     print("")
     print("╔══════════════════════════════════════════╗")
-    print("║  ✅ Done! Your audio is ready.           ║")
-    print(f"║  📁 Saved to: {output_path:<28}║")
+    print("║  Done! Your audio is ready.             ║")
+    print(f"║  Saved to: {output_path:<31}║")
     print("╚══════════════════════════════════════════╝")
     print("")
 
