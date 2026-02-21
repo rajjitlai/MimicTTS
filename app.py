@@ -1,7 +1,9 @@
 import os
 import tempfile
+
 import gradio as gr
-from config import SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, OUTPUT_DIR
+
+from config import DEFAULT_LANGUAGE, OUTPUT_DIR, SUPPORTED_LANGUAGES
 from model import clone_voice
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

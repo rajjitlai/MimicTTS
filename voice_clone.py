@@ -1,10 +1,11 @@
 import argparse
 import os
+
 from config import (
     DEFAULT_LANGUAGE,
     DEFAULT_OUTPUT_FILE,
-    SUPPORTED_LANGUAGES,
     OUTPUT_DIR,
+    SUPPORTED_LANGUAGES,
 )
 from model import clone_voice
 

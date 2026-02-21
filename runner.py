@@ -1,10 +1,11 @@
 import os
+
 from config import (
-    SUPPORTED_LANGUAGES,
     DEFAULT_LANGUAGE,
     DEFAULT_OUTPUT_FILE,
-    REFERENCE_AUDIO_DIR,
     OUTPUT_DIR,
+    REFERENCE_AUDIO_DIR,
+    SUPPORTED_LANGUAGES,
 )
 from model import clone_voice
 

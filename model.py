@@ -1,7 +1,8 @@
-import torch
 import soundfile as sf
+import torch
 from qwen_tts import Qwen3TTSModel
-from config import MODEL_ID, DEVICE, DTYPE, USE_FLASH_ATTN, HF_TOKEN
+
+from config import DEVICE, DTYPE, HF_TOKEN, MODEL_ID, USE_FLASH_ATTN
 
 # Module-level singleton so the model is only loaded once
 _model = None
