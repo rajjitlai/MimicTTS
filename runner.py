@@ -26,7 +26,7 @@ def pick_reference_audio() -> str:
 
     if not files:
         print(f"❌ No audio files found in '{REFERENCE_AUDIO_DIR}/'.")
-        print(f"   Drop a .wav or .mp3 file there and re-run.\n")
+        print("   Drop a .wav or .mp3 file there and re-run.\n")
         exit(1)
 
     print("📂 Reference audio files available:")

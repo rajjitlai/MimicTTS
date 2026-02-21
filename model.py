@@ -1,5 +1,4 @@
 import soundfile as sf
-import torch
 from qwen_tts import Qwen3TTSModel
 
 from config import DEVICE, DTYPE, HF_TOKEN, MODEL_ID, USE_FLASH_ATTN
