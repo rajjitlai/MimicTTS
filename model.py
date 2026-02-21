@@ -1,8 +1,12 @@
 import soundfile as sf
 from qwen_tts import Qwen3TTSModel
+from transformers import logging as hf_logging
 
 from config import DEVICE, DTYPE, HF_TOKEN, MODEL_ID, USE_FLASH_ATTN
-from progress import TTSProgressStreamer
+from progress import TTSProgressSpinner
+
+# Suppress HuggingFace's "Setting pad_token_id to eos_token_id" warning spam
+hf_logging.set_verbosity_error()
 
 # Module-level singleton so the model is only loaded once
 _model = None
@@ -64,19 +68,7 @@ def clone_voice(
     print(f'Generating: "{text}"')
     print()
 
-    streamer = TTSProgressStreamer()
-    try:
-        wavs, sr = model.generate_voice_clone(
-            text=text,
-            language=language,
-            ref_audio=ref_audio,
-            ref_text=ref_text,
-            x_vector_only_mode=True,
-            streamer=streamer,
-        )
-    except TypeError:
-        # Library version does not support streamer kwarg — fall back silently
-        streamer.end()
+    with TTSProgressSpinner():
         wavs, sr = model.generate_voice_clone(
             text=text,
             language=language,
