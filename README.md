@@ -7,6 +7,9 @@
 ![License](https://img.shields.io/badge/License-Research%20%2F%20Personal-orange?style=flat-square)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square)
 ![CUDA](https://img.shields.io/badge/CUDA-Optional-green?style=flat-square&logo=nvidia&logoColor=white)
+![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square)
+![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-purple?style=flat-square)
+![Author](https://img.shields.io/badge/Author-Rajjit%20Laishram-blue?style=flat-square)
 
 **Voice cloning from a short audio clip. Powered by [Qwen3-TTS](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-Base) — an open-source model by Alibaba.**
 
@@ -241,6 +244,29 @@ Switch models by changing `MODEL_ID` in your `.env` file.
 - **Always provide the reference transcript.** Skipping it noticeably degrades clone quality.
 - **Match the language to the language you are generating**, not the language of the reference audio.
 - If you encounter GPU out-of-memory errors, set `DEVICE=cpu` in `.env` or switch to the 0.6B model.
+
+---
+
+## Author
+
+Built and maintained by **[Rajjit Laishram](https://rajjitlaishram.netlify.app)**.
+
+Feel free to reach out via the website for collaboration, feedback, or questions.
+
+---
+
+## Contributing
+
+Contributions of all kinds are welcome — bug fixes, new features, documentation improvements, and more.
+
+| Document | Description |
+|---|---|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to set up, branch, commit, and open a PR |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards and enforcement |
+| [CHANGELOG.md](CHANGELOG.md) | Full history of changes by version |
+| [SECURITY.md](SECURITY.md) | How to report vulnerabilities privately |
+
+To get started: fork the repo, create a branch, make your changes, and open a pull request against `main`.
 
 ---
 
