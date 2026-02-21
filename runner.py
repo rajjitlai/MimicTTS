@@ -1,9 +1,9 @@
 import json
 import os
+from datetime import datetime
 
 from config import (
     DEFAULT_LANGUAGE,
-    DEFAULT_OUTPUT_FILE,
     OUTPUT_DIR,
     REFERENCE_AUDIO_DIR,
     SUPPORTED_LANGUAGES,
@@ -172,29 +172,44 @@ def main() -> None:
 
     ref_audio = pick_reference_audio()
     ref_text = get_ref_text(ref_audio)
-    text_to_speak = ask_text_to_speak()
     language = pick_language()
-    output_path = DEFAULT_OUTPUT_FILE
 
-    if not confirm(ref_audio, ref_text, text_to_speak, language, output_path):
-        print("\nCancelled. Re-run when you're ready.\n")
-        return
+    while True:
+        text_to_speak = ask_text_to_speak()
 
-    print("\nGenerating cloned audio...\n")
-    clone_voice(
-        text=text_to_speak,
-        ref_audio=ref_audio,
-        ref_text=ref_text,
-        language=language,
-        output_path=output_path,
-    )
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_path = os.path.join(OUTPUT_DIR, f"result_{timestamp}.wav")
 
-    print("")
-    print("╔══════════════════════════════════════════╗")
-    print("║  Done! Your audio is ready.             ║")
-    print(f"║  Saved to: {output_path:<31}║")
-    print("╚══════════════════════════════════════════╝")
-    print("")
+        if not confirm(ref_audio, ref_text, text_to_speak, language, output_path):
+            print("\nCancelled. Let's try again.\n")
+            continue
+
+        print("\nGenerating cloned audio...\n")
+        clone_voice(
+            text=text_to_speak,
+            ref_audio=ref_audio,
+            ref_text=ref_text,
+            language=language,
+            output_path=output_path,
+        )
+
+        print("")
+        print("╔══════════════════════════════════════════╗")
+        print("║  Done! Your audio is ready.             ║")
+        print(f"║  Saved to: {output_path:<31}║")
+        print("╚══════════════════════════════════════════╝")
+        print("")
+
+        print("What would you like to do next?")
+        print("   [Enter] Generate another clip (same voice & language)")
+        print("   [q]     Quit")
+        answer = input("Choice: ").strip().lower()
+
+        if answer in ("q", "quit", "exit"):
+            print("\nGoodbye!\n")
+            break
+
+        print("\n" + "─" * 46 + "\n")
 
 
 if __name__ == "__main__":

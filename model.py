@@ -71,6 +71,7 @@ def clone_voice(
             language=language,
             ref_audio=ref_audio,
             ref_text=ref_text,
+            x_vector_only_mode=True,
             streamer=streamer,
         )
     except TypeError:
@@ -81,6 +82,7 @@ def clone_voice(
             language=language,
             ref_audio=ref_audio,
             ref_text=ref_text,
+            x_vector_only_mode=True,
         )
 
     sf.write(output_path, wavs[0], sr)
