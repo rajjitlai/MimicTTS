@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)
 ![Model](https://img.shields.io/badge/Model-Qwen3--TTS-purple?style=flat-square&logo=huggingface&logoColor=white)
-![License](https://img.shields.io/badge/License-Research%20%2F%20Personal-orange?style=flat-square)
+![License](https://img.shields.io/badge/License-Apache%202.0-orange?style=flat-square)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square)
 ![CUDA](https://img.shields.io/badge/CUDA-Optional-green?style=flat-square&logo=nvidia&logoColor=white)
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square)
@@ -272,4 +272,11 @@ To get started: fork the repo, create a branch, make your changes, and open a pu
 
 ## License
 
-This project is for personal and research use. The underlying Qwen3-TTS model is subject to its own [license on HuggingFace](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-Base). Please review it before any commercial use.
+Copyright 2026 [Rajjit Laishram](https://rajjitlaishram.netlify.app)
+
+Licensed under the **Apache License, Version 2.0**. You may not use this project except in compliance with the License.
+
+See the [LICENSE](LICENSE) file for the full license text, or visit:
+http://www.apache.org/licenses/LICENSE-2.0
+
+> **Note:** The underlying Qwen3-TTS model is subject to its own license on [HuggingFace](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-Base). Please review it before any commercial use of the model weights.

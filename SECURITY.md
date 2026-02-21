@@ -28,3 +28,5 @@ You will receive a response within 7 days. If the issue is confirmed, a patch wi
 ## Scope
 
 This project processes local audio files and runs a local TTS model. It does not transmit user audio or text to any external service (except for model downloads from HuggingFace). Ensure your `HF_TOKEN` is kept private and never committed to version control.
+
+MimicTTS is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.

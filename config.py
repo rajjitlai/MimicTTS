@@ -1,3 +1,4 @@
+import importlib.util
 import os
 
 import torch
@@ -17,7 +18,10 @@ else:
     DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 DTYPE = torch.bfloat16 if "cuda" in DEVICE else torch.float32
-USE_FLASH_ATTN = "cuda" in DEVICE
+
+# Only enable Flash Attention if both CUDA is available AND flash_attn is installed
+_flash_attn_available = importlib.util.find_spec("flash_attn") is not None
+USE_FLASH_ATTN = "cuda" in DEVICE and _flash_attn_available
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 REFERENCE_AUDIO_DIR = os.getenv("REFERENCE_AUDIO_DIR", "reference_audio")
