@@ -71,6 +71,6 @@ with gr.Blocks(title="MimicTTS") as demo:
     )
 
 if __name__ == "__main__":
-    from config import GRADIO_SHARE, GRADIO_PORT
+    from config import GRADIO_PORT, GRADIO_SHARE
 
     demo.launch(share=GRADIO_SHARE, server_port=GRADIO_PORT)
