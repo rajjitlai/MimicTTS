@@ -2,6 +2,7 @@ import soundfile as sf
 from qwen_tts import Qwen3TTSModel
 
 from config import DEVICE, DTYPE, HF_TOKEN, MODEL_ID, USE_FLASH_ATTN
+from progress import TTSProgressStreamer
 
 # Module-level singleton so the model is only loaded once
 _model = None
@@ -61,14 +62,27 @@ def clone_voice(
 
     print(f"Cloning voice from: {ref_audio}")
     print(f'Generating: "{text}"')
+    print()
 
-    wavs, sr = model.generate_voice_clone(
-        text=text,
-        language=language,
-        ref_audio=ref_audio,
-        ref_text=ref_text,
-    )
+    streamer = TTSProgressStreamer()
+    try:
+        wavs, sr = model.generate_voice_clone(
+            text=text,
+            language=language,
+            ref_audio=ref_audio,
+            ref_text=ref_text,
+            streamer=streamer,
+        )
+    except TypeError:
+        # Library version does not support streamer kwarg — fall back silently
+        streamer.end()
+        wavs, sr = model.generate_voice_clone(
+            text=text,
+            language=language,
+            ref_audio=ref_audio,
+            ref_text=ref_text,
+        )
 
     sf.write(output_path, wavs[0], sr)
-    print(f"✅ Saved output to: {output_path}")
+    print(f"Saved to: {output_path}")
     return output_path
