@@ -5,6 +5,10 @@ qwen-tts
 soundfile
 
 # Tensor / ML
+# NOTE: This installs the CPU-only build of PyTorch by default.
+# For GPU (CUDA) support, install manually with:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+#   (adjust cu118 to match your CUDA version: cu121, cu124, etc.)
 torch
 torchvision
 torchaudio
@@ -16,5 +20,5 @@ gradio
 numpy
 python-dotenv
 
-# other
+# HuggingFace fast transfer
 hf_xet

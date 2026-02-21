@@ -64,10 +64,3 @@ desktop.ini
 tmp/
 logs/
 
-# Audio files generated during development (keep the folders, ignore generated/personal audio) and reference audio
-outputs/*.wav
-outputs/*.mp3
-outputs/*.ogg
-reference_audio/*.wav
-reference_audio/*.mp3
-reference_audio/*.ogg

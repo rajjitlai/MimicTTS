@@ -1,7 +1,7 @@
 import torch
 import soundfile as sf
 from qwen_tts import Qwen3TTSModel
-from config import MODEL_ID, DEVICE, DTYPE, USE_FLASH_ATTN
+from config import MODEL_ID, DEVICE, DTYPE, USE_FLASH_ATTN, HF_TOKEN
 
 # Module-level singleton so the model is only loaded once
 _model = None
@@ -13,6 +13,13 @@ def get_model() -> Qwen3TTSModel:
 
     if _model is not None:
         return _model
+
+    if not HF_TOKEN:
+        print(
+            "WARNING: HF_TOKEN is not set in your .env file.\n"
+            "         Model downloads from HuggingFace may fail for gated models.\n"
+            "         Get a read token at https://huggingface.co/settings/tokens\n"
+        )
 
     print(f"Loading model: {MODEL_ID}")
     print(f"Device: {DEVICE} | dtype: {DTYPE}")
