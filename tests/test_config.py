@@ -1,6 +1,5 @@
 import os
 import sys
-
 from unittest.mock import patch
 
 # Ensure the root directory is in the path so we can import config
