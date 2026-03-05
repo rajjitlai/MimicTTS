@@ -1,7 +1,7 @@
 import os
+import sys
 import unittest
 from unittest.mock import patch
-import sys
 
 # Ensure the root directory is in the path so we can import config
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -24,6 +24,7 @@ def test_env_override():
     with patch.dict(os.environ, {"MODEL_ID": "custom-model-abc"}):
         # Reloading the module to pick up the new environment variable
         import importlib
+
         import config
 
         importlib.reload(config)
