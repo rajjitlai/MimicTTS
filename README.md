@@ -2,6 +2,8 @@
 
 <div align="center">
 
+![MimicTTS Hero](./resources/hero.png)
+
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)
 ![Model](https://img.shields.io/badge/Model-Qwen3--TTS-purple?style=flat-square&logo=huggingface&logoColor=white)
 ![License](https://img.shields.io/badge/License-Apache%202.0-orange?style=flat-square)
@@ -29,6 +31,14 @@ Clone any voice from a 3 to 15 second reference audio clip and generate new spee
 | Models | Lightweight 0.6B and higher quality 1.7B model options |
 | Configuration | Fully configurable via `.env` — no code changes needed |
 | Hardware | Runs on CUDA GPU (4 to 8GB VRAM) or CPU |
+
+---
+
+## How it Works
+
+MimicTTS uses a sophisticated voice cloning pipeline to capture the unique characteristics of a reference voice and transfer them to new speech.
+
+![MimicTTS Process](./resources/process.png)
 
 ---
 
@@ -206,6 +216,20 @@ MimicTTS/
 ├── .gitignore
 └── README.md
 ```
+
+---
+
+## Logic Flows
+
+### System Architecture
+The diagram below illustrates the modular relationship between the user interfaces and the core engine.
+
+![MimicTTS Architecture Flow](./resources/architecture_flow.png)
+
+### Voice Cloning (Inference) Flow
+This specialized flow shows how reference audio, transcripts, and target text are processed by the Qwen3-TTS model to generate high-fidelity speech.
+
+![MimicTTS Inference Flow](./resources/inference_flow.png)
 
 ---
 
