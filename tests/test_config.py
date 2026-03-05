@@ -1,6 +1,6 @@
 import os
 import sys
-import unittest
+
 from unittest.mock import patch
 
 # Ensure the root directory is in the path so we can import config
@@ -33,7 +33,7 @@ def test_env_override():
 
 
 def test_supported_languages():
-    """Test that the supported languages list is present and contains expected values."""
+    """Test that the supported languages list is present and contains values."""
     import config
 
     assert isinstance(config.SUPPORTED_LANGUAGES, list)
